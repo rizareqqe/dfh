@@ -6,5 +6,5 @@
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/your-vendor/pizza-store-lib.git
+   git clone https://github.com/rizareqqe/dfh.git
    ```
