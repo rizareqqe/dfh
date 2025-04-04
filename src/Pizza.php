@@ -11,6 +11,13 @@ abstract class Pizza
  /** @var array<string> */
  protected array $toppings;
 
+ /**
+  * Constructs a new Pizza instance.
+  *
+  * @param string $name The name of the pizza
+  * @param string $sauce The sauce used on the pizza
+  * @param array<string> $toppings The list of toppings on the pizza
+  */
  public function __construct(string $name, string $sauce, array $toppings)
  {
   $this->name = $name;

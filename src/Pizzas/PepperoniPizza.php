@@ -17,4 +17,3 @@ class PepperoniPizza extends Pizza
   );
  }
 }
- 

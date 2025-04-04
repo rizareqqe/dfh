@@ -1,6 +1,5 @@
 {
   "name": "your-vendor/pizza-store-lib",
-  "version": "1.0.0",
   "description": "Библиотека для управления магазином пиццерии",
   "type": "library",
   "require": {

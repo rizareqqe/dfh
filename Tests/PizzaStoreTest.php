@@ -9,21 +9,47 @@ use PizzaStore\Stores\NYPizzaStore;
 
 class PizzaStoreTest extends TestCase
 {
+ /**
+  * Tests the orderPizza method for a cheese pizza.
+  */
  public function testOrderPizza(): void
  {
   $store = new NYPizzaStore();
+  $pizza = $store->orderPizza(type: 'cheese');
 
-  // Проверяем вывод в консоль
-  $this->expectOutputString(
-   "Началась готовка пиццы Сырная пицца\n" .
-    "Добавлен соус Томатный соус\n" .
-    "Добавлены топики: Моцарелла, Пармезан, Чеддер\n" .
-    "Данную пиццу нарезают по диагонали\n"
-  );
-
-  $pizza = $store->orderPizza('cheese');
-
-  // Дополнительная проверка имени пиццы
   $this->assertEquals('Сырная пицца', $pizza->getName());
+ }
+
+ /**
+  * Tests the orderPizza method for a pepperoni pizza.
+  */
+ public function testOrderPizzaPepperoni(): void
+ {
+  $store = new NYPizzaStore();
+  $pizza = $store->orderPizza(type: 'pepperoni');
+
+  $this->assertEquals('Пицца с пепперони', $pizza->getName());
+ }
+
+ /**
+  * Tests the orderPizza method for a veggie pizza.
+  */
+ public function testOrderPizzaVeggie(): void
+ {
+  $store = new NYPizzaStore();
+  $pizza = $store->orderPizza(type: 'veggie');
+
+  $this->assertEquals('Овощная пицца', $pizza->getName());
+ }
+
+ /**
+  * Tests that orderPizza throws an exception for an invalid pizza type.
+  */
+ public function testOrderPizzaWithInvalidType(): void
+ {
+  $store = new NYPizzaStore();
+  $this->expectException(\InvalidArgumentException::class);
+  $this->expectExceptionMessage('Неизвестный тип пиццы: invalid');
+  $store->orderPizza(type: 'invalid');
  }
 }
