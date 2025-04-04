@@ -1,0 +1,19 @@
+{
+  "name": "your-vendor/pizza-store-app",
+  "description": "Приложение для заказа пиццы",
+  "require": {
+    "php": "^8.1",
+    "your-vendor/pizza-store-lib": "dev-main"
+  },
+  "autoload": {
+    "psr-4": {
+      "PizzaStoreApp\\": "src/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../pizza-store-lib"
+    }
+  ]
+}
