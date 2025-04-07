@@ -1,6 +1,6 @@
 {
   "name": "your-vendor/pizza-store-lib",
-  "description": "Библиотека для управления магазином пиццерии",
+  "description": "Базовая библиотека для управления магазином пиццерии",
   "type": "library",
   "require": {
     "php": "^8.1"
